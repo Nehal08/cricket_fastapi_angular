@@ -1,0 +1,32 @@
+.card{
+    /* width: 100%; */
+    width: 250px;
+    height:190px;
+    margin: 25px;
+    margin-top: 70px;
+    border: 0px;
+    background-color: #24305E;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+    padding-top: 70px;
+    color: #FEFFFF ;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover h4 {
+    transform: scale(1.02);
+}
+
+/* 
+#F8E9A1
+#F76C6C
+#A8D0E6
+#374785
+#24305E
+*/

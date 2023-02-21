@@ -1,0 +1,20 @@
+<div class="outer">
+    <div style="font-family: 'Oswald', sans-serif;">
+        <header>
+          <h1><strong>Team</strong> Registration</h1>
+        </header>
+        <form class="register-form" [formGroup]="teamDeatil" (ngSubmit)="handleSubmit(teamDeatil)">
+          <div class="row">
+            <div class="col-8 offset-md-2">
+              <input type="text" class="input-field" formControlName="teamName" placeholder="Team Name"
+              required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 offset-md-5">
+              <button class="btn btn-primary btn-text" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>

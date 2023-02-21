@@ -1,0 +1,10 @@
+<div class="outer">
+    <header>
+        <h1><strong>Teams</strong></h1>
+    </header>
+    <main *ngIf="teams">
+        <div *ngIf="teams.length > 0" class="cards">
+        <app-team-card *ngFor="let team of teams" [team]="team"></app-team-card>
+        </div>
+    </main>
+</div>

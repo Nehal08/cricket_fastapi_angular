@@ -1,0 +1,10 @@
+<div class="outer">
+    <header>
+        <h1><strong>Matches</strong></h1>
+    </header>
+    <main *ngIf="matches">
+        <div *ngIf="matches.length > 0" class="cards">
+        <app-match-card *ngFor="let match of matches" [match]="match"></app-match-card>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,90 @@
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 220px;
+    background-color: #DEF2F1;
+    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* #17252A
+#2B7A78
+#3AAFA9
+#DEF2F1
+#FEFFFF */
+
+
+/* 
+#2C3531
+#116466
+#D9B08C
+#FFCB9A
+#D1E8E2
+*/
+
+
+/* 
+#F8E9A1
+#F76C6C
+#A8D0E6
+#374785
+#24305E
+*/
+
+.header{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.title{
+    font-family: 'Square Peg', cursive;
+    font-size: 48px;
+    margin-top: 10px;
+    color: #24305E;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #DEF2F1;
+    border-color: #DEF2F1;
+}
+
+.btn-primary:hover{
+    background-color: #A8D0E6;
+    border-color: #A8D0E6;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-text{
+    font-weight: 700;
+    color:#24305E;
+}
+
+
+.custom-select {
+    padding: 9px;
+    cursor: pointer;
+    color:#24305E;
+    font-weight: 700;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.custom-select:hover{
+    background-color: #A8D0E6 ;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.custom-select:focus {
+    outline:none;
+ }

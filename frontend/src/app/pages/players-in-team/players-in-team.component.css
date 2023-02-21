@@ -1,0 +1,39 @@
+.outer{
+    margin-top: 250px;
+}
+main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-left: 15px;
+    padding-right: 15px;
+}
+
+main .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -8px;
+    justify-content: space-evenly;
+}
+
+/* #17252A
+#2B7A78
+#3AAFA9
+#DEF2F1
+#FEFFFF */
+
+header h1{
+    color: #888;
+    font-size: 38px;
+    font-weight: 400;
+    text-align: center;
+}
+
+header h1 strong{
+    color: #313131;
+    font-weight: 800;
+    text-transform: uppercase;   
+}
+
+header h1:hover{
+    color: #313131;
+}

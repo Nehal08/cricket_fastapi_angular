@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="row" style="margin-top: 10px;">
+        <h3><strong>{{match.team_1.name}}&nbsp;&nbsp;</strong><span style="font-weight: 100;">v/s</span><strong>&nbsp;&nbsp;{{match.team_2.name}}</strong></h3>
+        <code>{{match.venue}}</code>
+        <!-- <code>{{toss_won_by}}</code> -->
+        <p style="margin-top: 7px;">{{toss_won_by}}</p>
+    </div>
+    <div class="row">
+        <code style="font-size: 15px;">{{match.team_1.name}} : {{innings[0].score}}</code>
+        <code style="font-size: 15px;">{{match.team_2.name}} : {{innings[1].score}}</code> 
+    </div>
+    <div class="row" style="margin-top: 10px;">
+        <h4><strong>{{match.result}}</strong></h4>
+    </div>
+</div>

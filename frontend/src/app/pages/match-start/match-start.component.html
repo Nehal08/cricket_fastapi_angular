@@ -1,0 +1,34 @@
+<div class="outer">
+    <div style="font-family: 'Oswald', sans-serif;">
+        <header>
+          <h1>Begin <strong>Match</strong></h1>
+        </header>
+        <form class="register-form" [formGroup]="matchDetails" (ngSubmit)="handleSubmit(matchDetails)">
+            <div class="row">
+                <div class="col-8 offset-md-2">
+                    <input type="text" class="input-field" formControlName="matchVenue" placeholder="Venue"
+                    required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5 offset-md-1" style="margin-left: 100px;">
+                    <select class="custom-select" formControlName="team1">
+                        <option value="">Team</option>
+                        <option *ngFor="let team of teams" [ngValue]="team.team_id">{{team.name}}</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <select class="custom-select" formControlName="team2">
+                        <option value="">Opponent Team</option>
+                        <option *ngFor="let team of teams" [ngValue]="team.team_id">{{team.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 offset-md-5">
+                    <button class="btn btn-primary btn-text" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="toolbar" role="banner">
+    <div class="header">
+        <div class="row">
+            <div class="col-md-3 offset-md-5">
+                <div class="title">Match Scoring</div>                
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-2 offset-md-1">
+            <button class="btn btn-primary" (click)="homepage()"><span class="btn-text">Home</span></button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" (click)="registerTeam()"><span class="btn-text">Register Team</span></button>
+        </div>
+        <div class="col-md-2">
+            <select class="custom-select" [(ngModel)]="currentPlayerRoute" (change)="routeTo(currentPlayerRoute)">
+                <option value="">Players</option>
+                <option *ngFor="let pr of playerRoutes" [ngValue]="pr.value">{{pr.display}}</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <select class="custom-select" [(ngModel)]="currentMatchRoute" (change)="routeTo(currentMatchRoute)">
+                <option value="">Matches</option>
+                <option *ngFor="let mr of matchRoutes" [ngValue]="mr.value">{{mr.display}}</option>
+            </select>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="outer">
+    <div style="font-family: 'Oswald', sans-serif;">
+        <header>
+          <h1><strong>Player</strong> Registration</h1>
+        </header>
+        <form class="register-form" [formGroup]="playerDeatils" (ngSubmit)="handleSubmit(playerDeatils)">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" class="input-field" formControlName="playerName" placeholder="Player Name"
+              required />
+            </div>
+            <div class="col-4">
+              <input type="number" class="input-field" formControlName="playerAge" placeholder="Age "
+              required />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <input type="number" class="input-field" formControlName="playerRun" placeholder="Runs"
+            required />
+            </div>
+            <div class="col-4">
+              <select class="custom-select" formControlName="playerRole">
+                <option value="">Role</option>
+                <option *ngFor="let r of roles" [ngValue]="r.role">{{r.role}}</option>
+              </select>
+            </div>
+            <div class="col-4">
+              <select class="custom-select" formControlName="playerTeam">
+                <option value="">Team</option>
+                <option *ngFor="let team of teams" [ngValue]="team.team_id">{{team.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 offset-md-5">
+              <button class="btn btn-primary btn-text" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>

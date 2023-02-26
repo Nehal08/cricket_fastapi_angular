@@ -5,6 +5,7 @@ import { AllMatchesComponent } from './pages/all-matches/all-matches.component';
 import { AllPlayersComponent } from './pages/all-players/all-players.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MatchStartComponent } from './pages/match-start/match-start.component';
+import { MatchSummaryComponent } from './pages/match-summary/match-summary.component';
 import { PlayersInTeamComponent } from './pages/players-in-team/players-in-team.component';
 import { RegisterPlayerComponent } from './pages/register-player/register-player.component';
 import { RegisterTeamComponent } from './pages/register-team/register-team.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'begin_match',
     component: MatchStartComponent
+  },
+  {
+    path: 'match_summary/:match_id',
+    component: MatchSummaryComponent
   }
 ];
 

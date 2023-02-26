@@ -1,0 +1,43 @@
+.outer{
+    margin: 0 auto;
+    margin-top: 250px;
+    max-width: 1000px;
+	padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 50px;
+}
+
+.row{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+code{
+    color: black;
+}
+
+.in-table {
+    text-align: center;
+}
+
+th{
+    font-weight: 600;
+}
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px solid;
+    border-color: #f3f3f3;
+  }
+  
+
+legend{
+    float: none !important;
+}
+  

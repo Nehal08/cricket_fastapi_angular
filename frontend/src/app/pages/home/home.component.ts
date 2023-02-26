@@ -17,7 +17,6 @@ export class HomeComponent {
     this.matchservice.getAllTeams().subscribe(data => {
       let obj:any = data
       this.teams = obj
-      console.log(this.teams)
     })
     
   }

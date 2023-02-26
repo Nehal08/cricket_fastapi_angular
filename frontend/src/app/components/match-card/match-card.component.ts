@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatchService } from 'src/app/services/match.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class MatchCardComponent {
   toss_won_by!: string;
   innings!: any;
 
-  constructor(private matchservice: MatchService) { }
+  constructor(private matchservice: MatchService, private router: Router) { }
   
   ngOnInit(): void {
 
@@ -24,9 +25,11 @@ export class MatchCardComponent {
 
     })
 
-
-
   }
 
+
+  navigate(){
+    this.router.navigate(['match_summary',this.match.match_id])
+  }
 
 }

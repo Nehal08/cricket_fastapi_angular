@@ -44,22 +44,23 @@ class Innings(Base):
     inning_id = Column(Integer,default=None) # indicating first inning(1) or second inning(2)
     team_playing: Mapped[int] = mapped_column(ForeignKey("teams.team_id")) #associated team 
     m_id: Mapped[int] = mapped_column(ForeignKey("matches.match_id")) # associated match
-    score = Column(String,default=None)
+    run = Column(String,default=None)
+    wickets = Column(String,default=None)
 
 class Overs(Base):
     __tablename__ = "overs"
     over_id = Column(Integer,primary_key=True,autoincrement=True,nullable=False)
     m_id: Mapped[int] = mapped_column(ForeignKey("matches.match_id")) # associated match
     in_id: Mapped[int] = mapped_column(ForeignKey("innings.id")) # associated inning
-    # on_strike = Column(String,default=None)
+    on_strike = Column(String,default=None)
     this_over =  Column(String,default=None)
     summary = Column(String,default=None)
 
 
-class MatchSummary(Base):
-    __tablename__ = "matchsummary"
-    id = Column(Integer,primary_key=True,autoincrement=True,nullable=False)
-    overs = Mapped[List["Overs"]]
+# class MatchSummary(Base):
+#     __tablename__ = "matchsummary"
+#     id = Column(Integer,primary_key=True,autoincrement=True,nullable=False)
+#     overs = Mapped[List["Overs"]]
 
 
 

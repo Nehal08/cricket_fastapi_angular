@@ -30,6 +30,18 @@ export class MatchService {
     return this.httpclient.get(this.url + `/retrieve_innings_of_match?m_id=` + matchId)
   }
 
+  getOversOfMatch(matchId: number){
+    return this.httpclient.get(this.url + `/retrieve_overs_of_match?m_id=` + matchId)
+  }
+
+  getMatchById(matchId: number){ 
+    return this.httpclient.get(this.url + `/retrieve_match_by_id?m_id=` + matchId )
+  }
+
+  getPlayerOfThematch(teamId: number){
+    return this.httpclient.get(this.url + `/retrieve_mvp_of_match?t_id=` + teamId)
+  }
+
   addTeam(team: any){
     return this.httpclient.post(this.url + `/add_new_team`,team)
   }

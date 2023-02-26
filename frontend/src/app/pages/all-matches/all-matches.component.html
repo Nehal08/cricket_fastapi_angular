@@ -4,7 +4,10 @@
     </header>
     <main *ngIf="matches">
         <div *ngIf="matches.length > 0" class="cards">
-        <app-match-card *ngFor="let match of matches" [match]="match"></app-match-card>
+            <app-match-card *ngFor="let match of matches" [match]="match"></app-match-card>
+        </div>
+        <div class="no-results" *ngIf="matches.length == 0">
+            <em>No Matches has begun yet</em>
         </div>
     </main>
 </div>

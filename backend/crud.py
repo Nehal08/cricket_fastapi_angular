@@ -62,6 +62,10 @@ def get_match_by_id(db: Session,m_id: int):
 def get_inning_by_id(db: Session,m_id: int):
     return db.query(model.Innings).filter(model.Innings.m_id == m_id).all()
 
+def get_overs_by_match_id(db: Session,m_id: int):
+    return db.query(model.Overs).filter(model.Overs.m_id == m_id).all()
+
+
 def delete_player_details_by_id(db: Session, p_id: int):
     try:
         db.query(model.Players).filter(model.Players.player_id == p_id).delete()
@@ -93,6 +97,8 @@ def delete_match_details_by_id(db: Session, m_id: int):
 def get_player_by_id(db: Session, p_id: int):
     return db.query(model.Players).filter(model.Players.player_id == p_id).first()
 
+def get_match_by_id(db: Session, m_id: int):
+    return db.query(model.Matches).filter(model.Matches.match_id == m_id).first()
 
 def get_all_players_in_team(db: Session,t_id: int):
     # pls =  db.query(model.Players).filter(model.Players.team_id == t_id).all()
@@ -152,7 +158,8 @@ def update_player_details(db: Session,p_id: int,details: schema.PlayerAdd):
 
 def update_inning_details(db: Session,i_id: int,details: schema.InningBase):
     updated_dets = {
-        "score": details.score
+        "run": details.run,
+        "wickets": details.wickets
     }
     db.query(model.Innings).filter(model.Innings.id == i_id).update(updated_dets)
     db.commit()
@@ -171,10 +178,10 @@ def update_match_details(db: Session,m_id: int,details: schema.MatchRead):
 def get_match_mvp(db: Session,t_id: int):
     players = db.query(model.Players).filter(model.Players.team_id == t_id)
     mvp = players[0]
-    logging.error('%s - initial mvp',mvp.runs)
+    # logging.error('%s - initial mvp',mvp.runs)
     for player in players:
         if player.runs >= mvp.runs:
-            logging.error('%s - player runs(in if)',player.runs)
+            # logging.error('%s - player runs(in if)',player.runs)
             mvp = player
     return mvp 
 
@@ -252,7 +259,7 @@ def get_match_results(db: Session,m_id: int):
 
         overs += 1 
 
-    inning1 = update_inning_details(db,inning1.id,model.Innings(score=str(total_runs) + '/' + str(total_wickets)))
+    inning1 = update_inning_details(db,inning1.id,model.Innings(run=str(total_runs), wickets = str(total_wickets)))
     target = total_runs + 1
 
     logging.info('target is ',target)
@@ -308,9 +315,9 @@ def get_match_results(db: Session,m_id: int):
                     
         overs += 1
 
-    inning2 = update_inning_details(db,inning2.id,model.Innings(score=str(total_runs) + '/' + str(total_wickets)))
+    inning2 = update_inning_details(db,inning2.id,model.Innings(run=str(total_runs), wickets = str(total_wickets)))
 
-    if team_won.split(' ')[0] == first_batting_team.name:
+    if first_batting_team.name in team_won:
         mvp_player = get_match_mvp(db,first_batting_team.team_id)
     else:
         mvp_player = get_match_mvp(db,second_batting_team.team_id)

@@ -1,0 +1,91 @@
+<div class="outer">
+    <div class="row">
+        <div class="col-s-12">
+            <h3><strong>{{match.team_1.name}}&nbsp;&nbsp;</strong><span style="font-weight: 100;">v/s</span><strong>&nbsp;&nbsp;{{match.team_2.name}}</strong></h3>
+            <code>{{match.venue}}</code>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-md-3">
+            <h6 style="text-transform: uppercase;"><em><mark>{{toss_won_by}}</mark></em></h6>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col offset-md-3">
+                    <code><strong>{{team1name}}'s Inning</strong></code>
+                </div>
+            </div>
+            <div class="row">
+                <table class="in-table">
+                    <tr>
+                        <th>Over</th>
+                        <th>Update Score</th>
+                        <th>Now on Strike</th>
+                    </tr>
+                    <tr *ngFor="let over of inning1over">
+                        <td>{{over.this_over}}</td>
+                        <td>{{over.summary}}</td>
+                        <td>{{over.on_strike}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col offset-md-3">
+                    <code><strong>{{team2name}}'s Inning</strong></code>
+                </div>
+            </div>
+            <div class="row">
+                <table class="in-table">
+                    <tr>
+                        <th>Over</th>
+                        <th>Update Score</th>
+                        <th>Now on Strike</th>
+                    </tr>
+                    <tr *ngFor="let over of inning2over">
+                        <td>{{over.this_over}}</td>
+                        <td>{{over.summary}}</td>
+                        <td>{{over.on_strike}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-7 offset-md-3">
+            <h4 style="text-transform: uppercase;"><em><mark>{{match.result}}</mark></em></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-md-4">
+            <code style="font-size: large;"><mark>Player of the Match: {{mvp}}</mark></code>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <fieldset>
+                <legend>{{team1name}}</legend>
+                <table>
+                    <tr *ngFor="let player of team1players">
+                        <td><code>{{player.name}}&nbsp;</code></td>
+                        <td><code>&nbsp;{{player.runs}}</code></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+        <div class="col-6">
+            <fieldset>
+                <legend>{{team2name}}</legend>
+                <table>
+                    <tr *ngFor="let player of team2players">
+                        <td><code>{{player.name}}&nbsp;</code></td>
+                        <td><code>&nbsp;{{player.runs}}</code></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+</div>

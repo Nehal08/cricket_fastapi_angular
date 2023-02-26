@@ -4,7 +4,10 @@
     </header>
     <main *ngIf="teams">
         <div *ngIf="teams.length > 0" class="cards">
-        <app-team-card *ngFor="let team of teams" [team]="team"></app-team-card>
+            <app-team-card *ngFor="let team of teams" [team]="team"></app-team-card>
+        </div>
+        <div class="no-results" *ngIf="teams.length == 0">
+            <em>No Team is registerd yet</em>
         </div>
     </main>
 </div>

@@ -26,14 +26,15 @@ class InningBase(OurBaseModel):
     inning_id: str
     team_playing: int
     m_id: int
-    score: Optional[str] = None
+    run: Optional[str] = None
+    wickets: Optional[str] = None
 
 
 class OverBase(OurBaseModel):
     over_id: int
     m_id: int
     in_id: int
-    # on_strike: Optional[str] = None
+    on_strike: Optional[str] = None
     this_over: Optional[str] = None
     summary: Optional[str] = None
 

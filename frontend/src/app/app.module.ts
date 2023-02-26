@@ -16,6 +16,7 @@ import { RegisterTeamComponent } from './pages/register-team/register-team.compo
 import { AllMatchesComponent } from './pages/all-matches/all-matches.component';
 import { MatchCardComponent } from './components/match-card/match-card.component';
 import { MatchStartComponent } from './pages/match-start/match-start.component';
+import { MatchSummaryComponent } from './pages/match-summary/match-summary.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatchStartComponent } from './pages/match-start/match-start.component';
     RegisterTeamComponent,
     AllMatchesComponent,
     MatchCardComponent,
-    MatchStartComponent
+    MatchStartComponent,
+    MatchSummaryComponent
   ],
   imports: [
     BrowserModule,

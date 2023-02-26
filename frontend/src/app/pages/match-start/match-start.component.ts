@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MatchService } from 'src/app/services/match.service';
 
 @Component({
@@ -11,8 +12,9 @@ export class MatchStartComponent {
 
   matchDetails!: FormGroup
   teams!: any;
+  match: any
 
-  constructor(private matchservice: MatchService) { }
+  constructor(private matchservice: MatchService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -36,8 +38,14 @@ export class MatchStartComponent {
       "team_2_id": matchDetail.value.team2
     }
     this.matchservice.startMatch(match).subscribe(data => {
-      console.log(data)
+      let obj = data
+      this.match = obj 
+      console.log('match start returned data - ',this.match)
+
+      this.router.navigate(['match_summary',this.match.match_id])
+
     })
+
   }
 
 }

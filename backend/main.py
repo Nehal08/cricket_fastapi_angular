@@ -71,10 +71,22 @@ def retrieve_innings_of_match(m_id: int, db: Session = Depends(get_db)):
     innings = crud.get_inning_by_id(db=db,m_id=m_id)
     return innings
 
-# @app.get('/retrieve_mvp_of_match', response_model=schema.PlayerBase)
-# def retrieve_mvp_of_match(t_id: int, db: Session = Depends(get_db)):
-#     mvp = crud.get_match_mvp(db=db, t_id=t_id)
-#     return mvp
+
+@app.get('/retrieve_overs_of_match', response_model=List[schema.OverBase])
+def retrieve_overs_of_match(m_id: int, db: Session = Depends(get_db)):
+    overs = crud.get_overs_by_match_id(db=db,m_id=m_id)
+    return overs
+
+@app.get('/retrieve_match_by_id', response_model=schema.MatchRead)
+def retrieve_match_by_id(m_id: int, db: Session = Depends(get_db)):
+    match = crud.get_match_by_id(db=db,m_id=m_id)
+    return match
+
+
+@app.get('/retrieve_mvp_of_match', response_model=schema.PlayerBase)
+def retrieve_mvp_of_match(t_id: int, db: Session = Depends(get_db)):
+    mvp = crud.get_match_mvp(db=db, t_id=t_id)
+    return mvp
 
 
 @app.post('/add_new_player', response_model=schema.PlayerBase)
